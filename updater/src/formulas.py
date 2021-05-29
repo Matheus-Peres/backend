@@ -11,7 +11,7 @@ formulas = {
 		.format("saved_mice")
 	),
 	"score_survivor": (
-		"(1.6 * `{0}survivor_count` + 0.8 * `{0}mouse_killed`) "
+		"(1.6 * `{0}survivor_count` + 0.8 * `{0}mouse_killed` + 4.0 * `{0}shaman_count`) "
 		"/ POWER(GREATEST(`{0}shaman_count` * `{0}round_played`, 1), 0.25)"
 		.format("survivor_")
 	),
