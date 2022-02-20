@@ -1,8 +1,8 @@
 # Formulas for the composite scores
 formulas = {
 	"score_stats": (
-		"(POWER(`cheese_gathered`, 2) + POWER(`first`, 2) "
-		"+ POWER(`saved_mice`, 2)) / `round_played`"
+		"(POWER(300 * `cheese_gathered`, 0.5) + POWER(600 * `first`, 0.5) "
+		"+ POWER(100 * `saved_mice`, 0.5)) / POWER(`round_played`, 0.15)"
 	),
 	"score_shaman": (
 		"(`shaman_cheese` * 0.05 + `{0}` * 0.2 "
@@ -11,8 +11,8 @@ formulas = {
 		.format("saved_mice")
 	),
 	"score_survivor": (
-		"(1.6 * `{0}survivor_count` + 0.8 * `{0}mouse_killed`) "
-		"/ POWER(GREATEST(`{0}shaman_count` * `{0}round_played`, 1), 0.25)"
+		"(2 * `{0}survivor_count` + 1 * `{0}mouse_killed` + 5 * `{0}shaman_count`) "
+		"/ POWER(`{0}round_played`, 0.5)"
 		.format("survivor_")
 	),
 	"score_racing": (
